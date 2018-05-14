@@ -1,0 +1,85 @@
+Subrectangle by TopCoder
+
+
+Limak had an empty grid, divided into square cells. He chose some non-empty rectangle (with sides parallel to sides of the grid) and marked all cells inside the rectangle.
+
+
+
+A grid with H rows and W columns can be encoded into a string of length H*W as follows: examine the cells of the grid in row major order, and write down '#' for each marked cell and '.' for each empty cell. In other words, write down the first (topmost) row from the left to the right, then the second row from the left to the right, and so on.
+
+
+
+Limak wanted to write down a string representing his grid. Unfortunately, he is easily distracted and thus he missed some cells (maybe zero or all of them). In other words, he got a subsequence of the string representing his grid.
+
+
+
+You are given a String S that Limak got. What is the minimum possible number of cells he missed?
+
+
+
+You may choose any positive dimensions for the grid. All missed cells count: both empty and marked ones.
+
+
+Definition
+
+Class:  Subrectangle
+Method: minMissed
+Parameters: String
+Returns:    int
+Method signature:   int minMissed(String S)
+(be sure your method is public)
+
+
+Notes
+-   It can be proved that for any valid input string S there is some valid grid such that S is a subsequence of the string that encodes the grid.
+
+Constraints
+-   S will contain between 0 and 300 characters, inclusive.
+-   Each character in S will be either '.' or '#'.
+
+Examples
+0)
+
+"..###.##"
+Returns: 2
+It's possible that Limak's grid looked like this:
+..###
+..###
+This grid is represented by the string "..###..###". Limak missed 2 cells in this case: ..###.(.)##(#). Here, we denote missed cells by putting them in brackets. It's the minimum possible number of missed cells, so the answer is 2.
+1)
+
+"#.##.#.#.."
+Returns: 2
+The following grid is represented by the string #.#(.)#.#.#.(#).
+#.
+#.
+#.
+#.
+#.
+#.
+The second-to-last character could also be a dot (meaning that the last row in the grid is empty).
+2)
+
+"####"
+Returns: 0
+It's possible that Limak had a grid of size 1x4 or 2x2 or 4x1 and he marked the whole grid. The grid would be then represented by the given string "####".
+3)
+
+""
+Returns: 1
+4)
+
+"........................................"
+Returns: 1
+5)
+
+"###...###"
+Returns: 3
+6)
+
+".#.###.##...#.####.###...###.##"
+Returns: 15
+7)
+
+".................................................##..##...##.............................."
+Returns: 5
